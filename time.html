@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Complex Visualization Project">
+    <meta name="author" content="Evan Carraway">
+    <link rel="icon" href="https://www.gwu.edu/sites/all/themes/gwu_marketing/favicon.ico">
+
+    <title>Complex Visualization</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="files/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="files/jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+	<!-- Load the AJAX API aka Google API  -->
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	
+	<!-- Set default arguments -->
+	<script type="text/javascript">var category="Military expenditure (% of GDP)";</script>
+	<script type="text/javascript">var yearcol="S";</script>
+	<script type="text/javascript">var yeartext="2016";</script>
+	<script type="text/javascript">var styletext="Area";</script>
+	<script type="text/javascript" src="files/time.js"></script>
+	<script>
+		// Close the dropdown if the user clicks outside of it and redraw charts with new options
+		window.onclick = function(event) {
+		  if (event.target.matches('.optionbutton')) {
+			category=$(event.target).text();
+			console.log(category);
+			drawAllSheets();
+		  }
+		  if (event.target.matches('.stylebutton')) {
+			styletext=$(event.target).text();
+			console.log(styletext);
+			drawAllSheets();
+		  }
+		}
+	</script>
+    
+	<!-- Main navigation bar -->  
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="index.html">Complex Visualization</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="time.html">Timeline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+		  <!-- Dropdowns for chart modification -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+             <a class="optionbutton dropdown-item">Military expenditure (% of GDP)</a>
+			 <a class="optionbutton dropdown-item">Military expenditure (% of general government expenditure)</a>
+			 <a class="optionbutton dropdown-item">Military expenditure (current USD)</a>
+             <a class="optionbutton dropdown-item">Domestic general government health expenditure (% of GDP)</a>
+			 <a class="optionbutton dropdown-item">Domestic general government health expenditure (% of general government expenditure)</a>
+             <a class="optionbutton dropdown-item">Domestic general government health expenditure per capita (current US$)</a>
+			 <a class="optionbutton dropdown-item">Government expenditure on education as % of GDP (%)</a>
+			 <a class="optionbutton dropdown-item">Expenditure on education as % of total government expenditure (%)</a>
+             <a class="optionbutton dropdown-item">Government expenditure on education, US$ (millions)</a>
+			 <a class="optionbutton dropdown-item">Population, total</a>
+			 <a class="optionbutton dropdown-item">GDP (current US$)</a>
+            </div>
+          </li>
+		  <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Style</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+             <a class="stylebutton dropdown-item">Area</a>
+			 <a class="stylebutton dropdown-item">Line</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+			<a class="navbar-brand" href="index.html">G20 Countries: Government Spending on Military, Health and Education</a>
+        </form>
+      </div>
+    </nav>
+
+    <main role="main">
+
+      <!-- Main Chart Title Area -->
+      <div class="jumbotron1">
+        <div class="container">
+          <h1 class="display-4" id="title_div" style="text-align:center;padding-top:10px;"></h1>
+        </div>
+      </div>
+	  <div class="jumbotron2">
+        <div class="container">
+          <div id="chart_div"></div>
+        </div>
+      </div>
+	  <div class="jumbotron2">
+        <div class="container">
+          <div id="tab_div"></div>
+        </div>
+      </div>
+	  <div class="container">
+	   <p style="text-align:right;padding-top:10px;">** zero values indicate missing data</p>
+	  </div>
+        <hr>
+    </main>
+
+    <footer class="container">
+      <p>© Evan Carraway 2019</p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="files/jquery-3.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="files/popper.js"></script>
+    <script src="files/bootstrap.js"></script>
+ 
+</body></html>
